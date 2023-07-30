@@ -1,7 +1,7 @@
 ---
-layout: post
-title: "My Academic Achievements"
-categories: Miscellaneous
+layout: page
+permalink: /academy/
+title: My Academic Achievements
 ---
 
 ## Publications
