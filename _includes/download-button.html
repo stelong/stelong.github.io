@@ -1,0 +1,8 @@
+{% assign download_url = include.url | relative_url %}
+{% assign download_file = include.file | relative_url %}
+
+{% if download_url and download_file %}
+<a href="{{ download_url }}" download="{{ download_file }}">
+  <button>Download PDF</button>
+</a>
+{% endif %}

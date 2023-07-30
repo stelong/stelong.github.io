@@ -1,0 +1,11 @@
+- title: Presentation Title 1
+  date: January 1, 2023
+  conference: Conference Name 1
+  location: In-Person
+  pdf_url: /documents/oral_presentation1.pdf
+
+- title: Presentation Title 2
+  date: March 15, 2023
+  conference: Conference Name 2
+  location: Remote
+  pdf_url: /documents/oral_presentation2.pdf

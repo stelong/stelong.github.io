@@ -1,0 +1,11 @@
+- title: Poster Title 1
+  date: May 10, 2023
+  conference: Conference Name 3
+  location: In-Person
+  pdf_url: /documents/poster1.pdf
+
+- title: Poster Title 2
+  date: July 22, 2023
+  conference: Conference Name 4
+  location: Remote
+  pdf_url: /documents/poster2.pdf
