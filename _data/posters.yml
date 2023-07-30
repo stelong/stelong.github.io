@@ -1,11 +1,29 @@
-- title: Poster Title 1
-  date: May 10, 2023
-  conference: Conference Name 3
-  location: In-Person
-  pdf_url: /documents/poster1.pdf
+- title: Quantitative mapping of Force-pCa curves to the whole heart contraction and relaxation
+  date: 10-12/11/2021
+  conference: 2021 Cardiac Physiome Workshop
+  location: Virtual event [Remote attendance]
+  pdf_url: /documents/poster5.pdf
 
-- title: Poster Title 2
-  date: July 22, 2023
-  conference: Conference Name 4
-  location: Remote
+- title: Accelerating multi-scale Quantitative Systems Pharmacology models using a Bayesian surrogate modeling approach for quantitative translation from sub-cellular to whole-organ function: an example of evaluating Omecamtiv Mecarbil drug action in healthy rat hearts
+  date: 08-12/11/2021
+  conference: Twelfth American Conference on Pharmacometrics (ACoP12)
+  location: Virtual event [Remote attendance] - Trainee Quality Abstract Awardee
+  pdf_url: /documents/poster4.pdf
+
+- title: Quantifying contributions of cellular mechanical myocardial properties on left ventricular contractile function in aortic banded rats
+  date: 14-19/02/2020
+  conference: The 64th Annual Meeting of the Biophysical Society
+  location: San Diego (CA, USA) - San Diego Convention Center [In-Person attendance]
+  pdf_url: /documents/poster3.pdf
+
+- title: Bi-layered Gaussian process emulation of a rat heart multi-scale contraction model
+  date: 05-07/06/2019
+  conference: Uncertainty Quantification for Cardiac Models
+  location: Cambridge (UK) - Isaac Newton Institute for Mathematical Sciences [In-Person attendance]
   pdf_url: /documents/poster2.pdf
+
+- title: A virtual drug development for the recovery of a heart failing rat with preserved ejection fraction condition induced via transverse aortic constriction
+  date: 04-07/09/2018
+  conference: The Heart by Numbers: Integration Theory, Computation and Experiment\\to advance Cardiology
+  location: Berlin (Germany) - Max Delbrück Center for Molecular Medicine [In-Person attendance]
+  pdf_url: /documents/poster1.pdf

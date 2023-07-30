@@ -17,18 +17,19 @@ title: My Academic Achievements
 
 ## Oral Presentations
 
-{% for presentation in site.data.oral_presentations %}
+{% for presentation in site.data.presentations %}
 - **{{ presentation.title }}**
-  - *Date*: {{ presentation.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }})
-  - *Conference*: {{ presentation.conference }}, {{ presentation.location }}
-  {% include download-button.html file=page.path url=presentation.pdf_url %}
+  - ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}) {{ presentation.date }}
+  - ![Location Icon]({{ "/images/location.png" | relative_url }}) {{ presentation.location }}
+  - *Conference*: {{ presentation.conference }}
 {% endfor %}
 
 ## Posters
 
 {% for poster in site.data.posters %}
 - **{{ poster.title }}**
-  - *Date*: {{ poster.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }})
-  - *Conference*: {{ poster.conference }}, {{ poster.location }}
+  - ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}) {{ poster.date }}
+  - ![Location Icon]({{ "/images/location.png" | relative_url }}) {{ presentation.location }}
+  - *Conference*: {{ poster.conference }}
   {% include download-button.html file=page.path url=poster.pdf_url %}
 {% endfor %}

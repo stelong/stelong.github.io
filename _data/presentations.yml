@@ -1,11 +1,24 @@
-- title: Presentation Title 1
-  date: January 1, 2023
-  conference: Conference Name 1
-  location: In-Person
-  pdf_url: /documents/oral_presentation1.pdf
+- title: Accelerating multi-scale Quantitative Systems Pharmacology models using a Bayesian surrogate modeling approach for quantitative translation from sub-cellular to whole-organ function: an example of evaluating Omecamtiv Mecarbil drug action in healthy rat hearts
+  date: 08-12/11/2021
+  conference: Twelfth American Conference on Pharmacometrics (ACoP12)
+  location: Virtual event [Remote attendance] - Trainee Quality Abstract Awardee
 
-- title: Presentation Title 2
-  date: March 15, 2023
-  conference: Conference Name 2
-  location: Remote
-  pdf_url: /documents/oral_presentation2.pdf
+- title: In silico mapping of the omecamtiv mecarbil effects from the sarcomere to the whole-heart and back again
+  date: 21-25/06/2021
+  conference: The 11th biennial International Conference on Functional Imaging and Modeling of the Heart
+  location: Stanford (CA, USA) - Stanford University [Remote attendance]
+
+- title: Gaussian process emulation enables a quantitative link between cellular mechanical myocardial properties and left ventricular contractile function in aortic banded rats
+  date: 13-17/09/2020
+  conference: Computing in Cardiology (CinC)
+  location: Rimini (Italy) - Rimini Palacongressi [Remote attendance]
+
+- title: Predicting rat heart left ventricular function by means of Gaussian process emulation
+  date: 09-10/09/2019
+  conference: The 3rd Exchange Workshop of the UK QSP Network
+  location: Reading (UK) - University of Reading
+
+- title: Cardiovascular QSP modeling: virtual ventricular cell case study
+  date: 12-16/08/2019
+  conference: Systems Modeling in the Pharmaceutical Industry: Problem Solving Workshop
+  location: Toronto (Canada) - The Fields Institute for Research in Mathematical Sciences
