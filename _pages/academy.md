@@ -7,7 +7,9 @@ title: My Academic Achievements
 <hr>
 ## Publications
 
-{% for publication in site.data.publications %}
+### First Author
+
+{% for publication in site.data.publications_first %}
 - **{{ publication.title }}**
   <ul class="icon-list">
     <li><span class="icon-small"><img src="{{ "/images/people.png" | relative_url }}" alt="People Icon"></span> {{ publication.authors }}</li>
@@ -18,6 +20,20 @@ title: My Academic Achievements
 <br>
 {% endfor %}
 
+### Others
+
+{% for publication in site.data.publications_others %}
+- **{{ publication.title }}**
+  <ul class="icon-list">
+    <li><span class="icon-small"><img src="{{ "/images/people.png" | relative_url }}" alt="People Icon"></span> {{ publication.authors }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="Calendar Icon"></span> {{ publication.year }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/book.png" | relative_url }}" alt="Book Icon"></span> {{ publication.journal }}</li>
+  </ul>
+[Link to Publication]({{ publication.link }})
+<br>
+{% endfor %}
+
+<hr>
 ## Oral Presentations
 
 {% for presentation in site.data.presentations %}
@@ -31,6 +47,7 @@ title: My Academic Achievements
 <br>
 {% endfor %}
 
+<hr>
 ## Posters
 
 {% for poster in site.data.posters %}

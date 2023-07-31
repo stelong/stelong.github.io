@@ -1,27 +1,3 @@
-- title: Quantitative mapping of force-pCa curves to whole-heart contraction and relaxation
-  authors: Stefano Longobardi; Anna Sher; Steven A. Niederer
-  year: 2022
-  journal: The Journal of Physiology
-  link: https://doi.org/10.1113/JP283352
-
-- title: In silico identification of potential calcium dynamics and sarcomere targets for recovering left ventricular function in rat heart failure with preserved ejection fraction
-  authors: Stefano Longobardi; Jeffrey J. Saucerman; Anna Sher; Steven A. Niederer
-  year: 2021
-  journal: PLOS Computational Biology
-  link: https://doi.org/10.1371/journal.pcbi.1009646
-
-- title: In Silico Mapping of the Omecamtiv Mecarbil Effects from the Sarcomere to the Whole-Heart and Back Again
-  authors: Stefano Longobardi; Anna Sher; Steven A. Niederer
-  year: 2021
-  journal: Functional Imaging and Modeling of the Heart. FIMH 2021. Lecture Notes in Computer Science
-  link: https://doi.org/10.1007/978-3-030-78710-3_39
-
-- title: Predicting left ventricular contractile function via Gaussian process emulation in aortic-banded rats
-  authors: S. Longobardi; A. Lewalle; S. Coveney; I. Sjaastad; E. K. S. Espe; W. E. Louch; C. J. Musante; A. Sher; S. A. Niederer
-  year: 2020
-  journal: Philosophical Transactions of the Royal Society A
-  link: https://doi.org/10.1098/rsta.2019.0334
-
 - title: Cell to whole organ global sensitivity analysis on a four-chamber heart electromechanics model using Gaussian processes emulators
   authors: Strocchi, M., Longobardi, S., Augustin, C. M., Gsell, M. A. F., Petras, A., Rinaldi, C. A., Vigmond, E. J., Plank, G., Oates, C. J., Wilkinson, R. D., Niederer, S. A.
   year: 2023
