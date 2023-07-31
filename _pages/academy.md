@@ -29,5 +29,5 @@ title: My Academic Achievements
   - *Date*: {{ poster.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }})
   - *Conference*: {{ poster.conference }}
   - *Location*: {{ poster.location }} ![Location Icon]({{ "/images/location.png" | relative_url }})
-  {% include download-button.html file=page.path url=poster.pdf_url %}
+  {% include download-button.html url=poster.pdf_url %}
 {% endfor %}
