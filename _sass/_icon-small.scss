@@ -1,9 +1,6 @@
 .icon-small {
-    width: 16px;
-    height: 16px;
-    
-    &.people { background-image: url('https://fonts.gstatic.com/s/i/materialicons/people/v16/24px.svg'); }
-    &.book { background-image: url('https://fonts.gstatic.com/s/i/materialicons/menu_book/v17/24px.svg'); }
-    &.location { background-image: url('https://fonts.gstatic.com/s/i/materialicons/location_on/v19/24px.svg'); }
-    &.calendar { background-image: url('https://fonts.gstatic.com/s/i/materialicons/date_range/v14/24px.svg'); }
-}
+    height: 16px; /* Adjust the height as per your preference */
+    width: 16px; /* Adjust the width as per your preference */
+    vertical-align: text-bottom; /* To align the icons with the text */
+  }
+  
