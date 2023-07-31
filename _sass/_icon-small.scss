@@ -1,5 +1,19 @@
+/* Style for the icon list */
+.icon-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Style for each list item */
+.icon-list li {
+  margin-bottom: 10px; /* Optional: Adjust the spacing between list items */
+}
+
+/* Style for the icon */
 .icon-small {
-    height: 20px; /* Adjust the height as per your preference */
-    width: 20px; /* Adjust the width as per your preference */
-    vertical-align: text-bottom; /* To align the icons with the text */
-  }
+  display: inline-block;
+  width: 20px; /* Adjust the width and height as per your preference */
+  height: 20px;
+  vertical-align: middle; /* To vertically align the icon with the text */
+  margin-right: 5px; /* Optional: Adjust the spacing between the icon and text */
+}
