@@ -8,9 +8,10 @@ title: My Academic Achievements
 
 {% for publication in site.data.publications %}
 - **{{ publication.title }}**
-  - *Authors*: {{ publication.authors }} ![People Icon]({{ "/images/people.png" | relative_url }}){:class="icon-small"}
-  - *Year*: {{ publication.year }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}){:class="icon-small"}
-  - *Journal*: [{{ publication.journal }}]({{ publication.link }}) ![Book Icon]({{ "/images/book.png" | relative_url }}){:class="icon-small"}
+  - ![People Icon]({{ "/images/people.png" | relative_url }}){:class="icon-small"} {{ publication.authors }}
+  - ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}){:class="icon-small"} {{ publication.year }}
+  - ![Book Icon]({{ "/images/book.png" | relative_url }}){:class="icon-small"} {{ publication.journal }}
+[Link to Publication]({{ publication.link }})
 {% endfor %}
 
 ## Oral Presentations
