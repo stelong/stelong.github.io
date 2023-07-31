@@ -6,8 +6,6 @@ title: My Academic Achievements
 
 ## Publications
 
-{% assign publications = site.data.publications %}
-
 {% for publication in publications %}
 - **{{ publication.title }}**
   - *Authors*: {{ publication.authors }} ![People Icon]({{ "/images/people.png" | relative_url }})
@@ -17,19 +15,19 @@ title: My Academic Achievements
 
 ## Oral Presentations
 
-{% for presentation in site.data.presentations %}
+{% for presentation in site.data.oral_presentations %}
 - **{{ presentation.title }}**
-  - ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}) {{ presentation.date }}
-  - ![Location Icon]({{ "/images/location.png" | relative_url }}) {{ presentation.location }}
+  - *Date*: {{ presentation.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }})
   - *Conference*: {{ presentation.conference }}
+  - *Location*: {{ presentation.location }} ![Location Icon]({{ "/images/location.png" | relative_url }})
 {% endfor %}
 
 ## Posters
 
 {% for poster in site.data.posters %}
 - **{{ poster.title }}**
-  - ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}) {{ poster.date }}
-  - ![Location Icon]({{ "/images/location.png" | relative_url }}) {{ presentation.location }}
+  - *Date*: {{ poster.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }})
   - *Conference*: {{ poster.conference }}
+  - *Location*: {{ poster.location }} ![Location Icon]({{ "/images/location.png" | relative_url }})
   {% include download-button.html file=page.path url=poster.pdf_url %}
 {% endfor %}
