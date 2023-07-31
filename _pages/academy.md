@@ -17,22 +17,28 @@ title: My Academic Achievements
 <br>
 {% endfor %}
 
-
 ## Oral Presentations
 
 {% for presentation in site.data.presentations %}
 - **{{ presentation.title }}**
-  - *Date*: {{ presentation.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}){:class="icon-small"}
-  - *Conference*: {{ presentation.conference }}
-  - *Location*: {{ presentation.location }} ![Location Icon]({{ "/images/location.png" | relative_url }}){:class="icon-small"}
+  <ul class="icon-list">
+    <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="People Icon"></span> {{ presentation.date }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/location.png" | relative_url }}" alt="Calendar Icon"></span> {{ presentation.location }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/conference.png" | relative_url }}" alt="Book Icon"></span> {{ presentation.conference }}</li>
+  </ul>
+*Contact me for full presentation*
+<br>
 {% endfor %}
 
 ## Posters
 
 {% for poster in site.data.posters %}
 - **{{ poster.title }}**
-  - *Date*: {{ poster.date }} ![Calendar Icon]({{ "/images/calendar.png" | relative_url }}){:class="icon-small"}
-  - *Conference*: {{ poster.conference }}
-  - *Location*: {{ poster.location }} ![Location Icon]({{ "/images/location.png" | relative_url }}){:class="icon-small"}
-  {% include download-button.html url=poster.pdf_url %}
+  <ul class="icon-list">
+    <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="People Icon"></span> {{ poster.date }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/location.png" | relative_url }}" alt="Calendar Icon"></span> {{ poster.location }}</li>
+    <li><span class="icon-small"><img src="{{ "/images/conference.png" | relative_url }}" alt="Book Icon"></span> {{ poster.conference }}</li>
+  </ul>
+{% include download-button.html url=poster.pdf_url %}
+<br>
 {% endfor %}
