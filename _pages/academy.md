@@ -39,6 +39,5 @@ title: My Academic Achievements
     <li><span class="icon-small"><img src="{{ "/images/location.png" | relative_url }}" alt="Calendar Icon"></span> {{ poster.location }}</li>
     <li><span class="icon-small"><img src="{{ "/images/conference.png" | relative_url }}" alt="Book Icon"></span> {{ poster.conference }}</li>
   </ul>
-{% include download-button.html url=poster.pdf_url %}
-<br>
+{% include download-button.html url=poster.pdf_url text="Download Poster" %}
 {% endfor %}

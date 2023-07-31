@@ -1,8 +1,5 @@
-{% assign download_url = include.url | relative_url %}
-{% assign download_file = poster.pdf_url | split: '/' | last %}
-
-{% if download_url and download_file %}
-<a href="{{ download_url }}" download="{{ download_file }}">
-  <button>Download PDF</button>
-</a>
+{% if include.url %}
+  <a href="{{ include.url }}" download>
+    {{ include.text }}
+  </a>
 {% endif %}
