@@ -4,6 +4,7 @@ permalink: /academy/
 title: My Academic Achievements
 ---
 
+<hr>
 ## Publications
 
 {% for publication in site.data.publications %}
