@@ -13,7 +13,8 @@ title: My Academic Achievements
     <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="Calendar Icon"></span> {{ publication.year }}</li>
     <li><span class="icon-small"><img src="{{ "/images/book.png" | relative_url }}" alt="Book Icon"></span> {{ publication.journal }}</li>
   </ul>
-<br>[Link to Publication]({{ publication.link }})
+[Link to Publication]({{ publication.link }})
+<br>
 {% endfor %}
 
 
