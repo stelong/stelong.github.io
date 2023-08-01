@@ -1,41 +1,41 @@
 - title: Cell to whole organ global sensitivity analysis on a four-chamber heart electromechanics model using Gaussian processes emulators
-  authors: M. Strocchi; S. Longobardi; C. M. Augustin; M. A. F. Gsell; A. Petras; C. A. Rinaldi; E. J. Vigmond; G. Plank; C. J. Oates; R. D. Wilkinson; S. A. Niederer
+  authors: Strocchi, M.; Longobardi, S.; Augustin, C. M.; Gsell, M. A. F.; Petras, A.; Rinaldi, C. A.; Vigmond, E. J.; Plank, G.; Oates, C. J.; Wilkinson, R. D.; Niederer, S. A.
   year: 2023
   journal: PLOS Computational Biology
   link: https://doi.org/10.1371/journal.pcbi.1011257
 
 - title: Calibration of Cohorts of Virtual Patient Heart Models Using Bayesian History Matching
-  authors: C. Rodero; S. Longobardi; C. M. Augustin; M. Strocchi; G. Plank; P. Lamata; S. A. Niederer
+  authors: Rodero, C.; Longobardi, S.; Augustin, C. M.; Strocchi, M.; Plank, G.; Lamata, P.; Niederer, S. A.
   year: 2022
   journal: Annals of Biomedical Engineering
   link: https://doi.org/10.1007/s10439-022-03095-9
 
 - title: Global sensitivity analysis of four chamber heart hemodynamics using surrogate models
-  authors: E. Karabelas; S. Longobardi; J. Fuchsberger; O. Razeghi; C. Rodero; M. Strocchi; R. Rajani; G. Haase; G. Plank; S. A. Niederer
+  authors: Karabelas, E.; Longobardi, S.; Fuchsberger, J.; Razeghi, O.; Rodero, C.; Strocchi, M.; Rajani, R.; Haase, G.; Plank, G.; Niederer, S. A.
   year: 2022
   journal: IEEE Transactions on Biomedical Engineering
   link: https://doi.org/10.1109/TBME.2022.3163428
 
 - title: Modelling the interaction between stem cells derived cardiomyocytes patches and host myocardium to aid non-arrhythmic engineered heart tissue design
-  authors: D. Fassina; C. M. Costa; S. Longobardi; E. Karabelas; G. Plank; S. E. Harding; S. A. Niederer
+  authors: Fassina, D.; Costa, C. M.; Longobardi, S.; Karabelas, E.; Plank, G.; Harding, S. E.; Niederer, S. A.
   year: 2022
   journal: PLOS Computational Biology
   link: https://doi.org/10.1371/journal.pcbi.1010030
 
 - title: Linking statistical shape models and simulated function in the healthy adult human heart
-  authors: C. Rodero; M. Strocchi; M. Marciniak; S. Longobardi; J. Whitaker; M. D. O'Neill; K. Gillette; C. Augustin; G. Plank; E. J. Vigmond; P. Lamata; S. A. Niederer
+  authors: Rodero, C.; Strocchi, M.; Marciniak, M.; Longobardi, S.; Whitaker, J.; O'Neill, M. D.; Gillette, K.; Augustin, C.; Plank, G.; Vigmond, E. J.; Lamata, P.; Niederer, S. A.
   year: 2021
   journal: PLOS Computational Biology
   link: https://doi.org/10.1371/journal.pcbi.1008851
 
 - title: Tracking the motion of intracardiac structures aids the development of future leadless pacing systems
-  authors: O. Razeghi; M. Strocchi; A. Lee; S. Longobardi; B. S. Sidhu; J. Gould; J. M. Behar; R. Rajani; C. A. Rinaldi; S. A. Niederer
+  authors: Razeghi, O.; Strocchi, M.; Lee, A.; Longobardi, S.; Sidhu, B. S.; Gould, J.; Behar, J. M.; Rajani, R.; Rinaldi, C. A.; Niederer, S. A.
   year: 2020
   journal: Journal of Cardiovascular Electrophysiology
   link: https://doi.org/10.1111/jce.14657
 
 - title: "Regional diastolic dysfunction in post-infarction heart failure: role of local mechanical load and SERCA expression"
-  authors: Å. Røe; M. Ruud; E. Espe; O. Manfra; S. Longobardi; J. Aronsen; E. Nordén; T. Husebye; T. Kolstad; A. Cataliotti; G. Christensen; O. Sejersted; S. A. Niederer; G. Andersen; I. Sjaastad; W. Louch
+  authors: Røe, Å.; Ruud, M.; Espe, E.; Manfra, O.; Longobardi, S.; Aronsen, J.; Nordén, E.; Husebye, T.; Kolstad, T.; Cataliotti, A.; Christensen, G.; Sejersted, O.; Niederer, S. A.; Andersen, G.; Sjaastad, I.; Louch, W.
   year: 2018
   journal: Cardiovascular Research
   link: https://doi.org/10.1093/cvr/cvy257
