@@ -4,7 +4,7 @@ permalink: /academy/
 title: My Academic Achievements
 ---
 
-<hr>
+<div class="custom-ruler"></div>
 ## Publications
 
 ### First Author
