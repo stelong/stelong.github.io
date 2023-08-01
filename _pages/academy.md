@@ -34,7 +34,7 @@ title: My Academic Achievements
 {% endfor %}
 
 <hr>
-## Oral Presentations
+## Talks
 
 {% for presentation in site.data.presentations %}
 - **{{ presentation.title }}**
