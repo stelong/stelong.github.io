@@ -33,7 +33,7 @@ title: My Academic Achievements
 <br>
 {% endfor %}
 
-<hr>
+<div class="custom-ruler"></div>
 ## Talks
 
 {% for presentation in site.data.presentations %}
@@ -47,7 +47,7 @@ title: My Academic Achievements
 <br>
 {% endfor %}
 
-<hr>
+<div class="custom-ruler"></div>
 ## Posters
 
 {% for poster in site.data.posters %}
