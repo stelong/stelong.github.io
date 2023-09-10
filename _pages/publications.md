@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /academy/
-title: My Academic Achievements
+permalink: /publications/
+title: Publications, Talks, and Posters
 ---
 
 <div class="custom-ruler"></div>
