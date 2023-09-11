@@ -2,20 +2,17 @@
 layout: default
 ---
 
-{% block content %}
 <section id="home">
     <h2>Welcome to My Website</h2>
     <p>Hello, I'm [Your Name], and this is my personal website where I share my thoughts and experiences.</p>
     
     <p>This is where you can provide a brief introduction about yourself and your interests. You can also share any updates or announcements.</p>
 </section>
-{% endblock %}
 
-{% block content %}
-<section id="home">
-    <h2>Home</h2>
-    <p>Welcome to the home section of my website. Here, you'll find information about me and my latest updates.</p>
-    <!-- Add your content about yourself and latest updates here -->
+<section id="projects">
+    <h2>Projects</h2>
+    <p>Discover the exciting projects I've been working on. Coming soon!</p>
+    <a href="{{ site.baseurl }}/_pages/projects.html">Explore Publications</a>
 </section>
 
 <section id="publications">
@@ -24,20 +21,8 @@ layout: default
     <a href="{{ site.baseurl }}/_pages/publications.html">Explore Publications</a>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <p>Discover the exciting projects I've been working on. Coming soon!</p>
-</section>
-
-<section id="about">
-    <h2>About</h2>
-    <p>Learn more about me, my background, and what drives me in my professional journey.</p>
-    <!-- Add your about me content here -->
-</section>
-
 <section id="search">
     <h2>Search</h2>
     <p>Looking for something specific? Use the search functionality to find what you need.</p>
     <a href="{{ site.baseurl }}/_pages/search.html">Search Now</a>
 </section>
-{% endblock %}
