@@ -4,48 +4,38 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <h1>{{ post.title }}</h1>
-
-        <div>
-          <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
+<!DOCTYPE html>
+<html>
+<head>
+    Siamo nella sezione Projects
+</head>
+<body>
+    <div class="contain-to-grid sticky"></div>
+    <div id="main" role="main">
+        <div class="full">
+            <div class="row">
+                <table class="page-list">
+                    <tr class="clickable-row" data-href="/_projects/GPErks">
+                        <td class="description">Progetto 1</td>
+                        <td>
+                            <div class="square-figure" style="width: 50px; height: 50px; background-color: #000;"></div>
+                        </td>
+                    </tr>
+                    <tr class="clickable-row" data-href="/_projects/TheFlysLoop">
+                        <td class="description">Progetto 2</td>
+                        <td>
+                            <div class="square-figure" style="width: 50px; height: 50px; background-color: #ff0000;"></div>
+                        </td>
+                    </tr>
+                    <tr class="clickable-row" data-href="/_projects/ExampleProject">
+                        <td class="description">Progetto 3</td>
+                        <td>
+                            <div class="square-figure" style="width: 50px; height: 50px; background-color: #00ff00;"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-      </a>
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-
-  <!-- pagination -->
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-    {% else %}
-      <span>&laquo; Prev</span>
-    {% endif %}
-
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="webjeda">{{ page }}</span>
-      {% elsif page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-      <span>Next &raquo;</span>
-    {% endif %}
-  </div>
-  {% endif %}
-</div>
+    </div>
+</body>
+</html>
