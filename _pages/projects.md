@@ -36,8 +36,8 @@ permalink: /projects/
         }
 
         .logo-img {
-            max-width: 100%; /* Make the image occupy the whole cell width */
-            max-height: 100%; /* Make the image occupy the whole cell height */
+            max-width: 80%; /* Make the image occupy the whole cell width */
+            max-height: 80%; /* Make the image occupy the whole cell height */
             display: block; /* Remove any potential extra spacing */
             margin: 0 auto; /* Center the image horizontally */
             border: 0; /* Remove any borders */
@@ -60,13 +60,13 @@ permalink: /projects/
                     <tr class="clickable-row" data-href="/projects/GPErks">
                         <td class="description-cell">GPErks</td>
                         <td class="logo-cell">
-                            <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErksLogo">
+                            <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErks_logo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
                         <td class="description-cell">The Fly's Loop</td>
                         <td class="logo-cell">
-                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoopLogo">
+                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoop_logo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/ExampleProject">
