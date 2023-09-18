@@ -60,13 +60,13 @@ permalink: /projects/
                     <tr class="clickable-row" data-href="/projects/GPErks">
                         <td class="description-cell">GPErks</td>
                         <td class="logo-cell">
-                            <img class="logo-img" src="/images/GPErks_logo.png" alt="Logo">
+                            <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErksLogo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
                         <td class="description-cell">The Fly's Loop</td>
                         <td class="logo-cell">
-                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="Logo">
+                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoopLogo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/ExampleProject">
