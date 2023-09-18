@@ -21,8 +21,8 @@ permalink: /projects/
         }
 
         .square-cell {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             vertical-align: top; /* Align image to the top of the cell */
         }
 
@@ -31,12 +31,16 @@ permalink: /projects/
         }
 
         .logo-cell {
-            text-align: center; /* Center the image horizontally */
+            text-align: center; /* Center the content horizontally */
+            padding: 0; /* Remove padding */
         }
 
         .logo-img {
             max-width: 100%; /* Make the image occupy the whole cell width */
             max-height: 100%; /* Make the image occupy the whole cell height */
+            display: block; /* Remove any potential extra spacing */
+            margin: 0 auto; /* Center the image horizontally */
+            border: 0; /* Remove any borders */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -54,15 +58,15 @@ permalink: /projects/
             <div class="row">
                 <table class="page-list">
                     <tr class="clickable-row" data-href="/projects/GPErks">
-                        <td class="description-cell">Progetto 1</td>
+                        <td class="description-cell">GPErks</td>
                         <td class="logo-cell">
                             <img class="logo-img" src="/images/GPErks_logo.png" alt="Logo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
-                        <td class="description-cell">Progetto 2</td>
+                        <td class="description-cell">The Fly's Loop</td>
                         <td class="logo-cell">
-                            <div class="square-figure" style="background-color: #ff0000;"></div>
+                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="Logo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/ExampleProject">
