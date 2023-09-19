@@ -20,26 +20,27 @@ permalink: /projects/
             cursor: pointer;
         }
 
+        .row-content {
+            display: flex;
+            align-items: center;
+            height: 100%; /* Make the row occupy the full height */
+        }
+
         .square-cell {
-            width: 50px;
-            height: 50px;
-            vertical-align: top; /* Align image to the top of the cell */
+            flex: 0 0 50px; /* Set a fixed width for the square */
+            height: 100%; /* Make the square occupy the full row height */
+            background-image: url("/images/GPErks_logo.png"); /* Set the image as background */
+            background-size: cover; /* Cover the entire cell with the image */
         }
 
-        .description-cell {
-            /* Adjust the width of the first column cell as needed */
-        }
-
-        .logo-cell {
-            text-align: center; /* Center the content horizontally */
-            padding: 0; /* Remove padding */
+        .text-cell {
+            /* Adjust the width of the text cell as needed */
         }
 
         .logo-img {
-            max-width: 80%; /* Make the image occupy the whole cell width */
-            max-height: 80%; /* Make the image occupy the whole cell height */
+            max-width: 100%; /* Make the image occupy the whole cell width */
+            max-height: 100%; /* Make the image occupy the whole cell height */
             display: block; /* Remove any potential extra spacing */
-            margin: 0 auto; /* Center the image horizontally */
             border: 0; /* Remove any borders */
         }
     </style>
@@ -58,21 +59,22 @@ permalink: /projects/
             <div class="row">
                 <table class="page-list">
                     <tr class="clickable-row" data-href="/projects/GPErks">
-                        <td class="description-cell">GPErks</td>
-                        <td class="logo-cell">
-                            <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErks_logo">
+                        <td class="row-content">
+                            <div class="square-cell"></div>
+                            <div class="text-cell">
+                                <p>GPErks</p>
+                                <p>A Python library to (bene)fit Gaussian Process Emulators</p>
+                            </div>
                         </td>
                     </tr>
+                    <!-- Add similar rows for other projects, changing the image path -->
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
-                        <td class="description-cell">The Fly's Loop</td>
-                        <td class="logo-cell">
-                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoop_logo">
-                        </td>
-                    </tr>
-                    <tr class="clickable-row" data-href="/projects/ExampleProject">
-                        <td class="description-cell">Progetto 3</td>
-                        <td class="logo-cell">
-                            <div class="square-figure" style="background-color: #00ff00;"></div>
+                        <td class="row-content">
+                            <div class="square-cell" style="background-image: url('/images/TheFlysLoop_logo.png');"></div>
+                            <div class="text-cell">
+                                <p>The Fly's Loop</p>
+                                <p>Unravelling the chaotic behaviour of a nervous fly at lunch time</p>
+                            </div>
                         </td>
                     </tr>
                 </table>
