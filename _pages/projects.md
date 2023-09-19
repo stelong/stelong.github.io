@@ -29,19 +29,17 @@ permalink: /projects/
         .square-cell {
             flex: 0 0 50px; /* Set a fixed width for the square */
             height: 100%; /* Make the square occupy the full row height */
-            background-image: url("/images/GPErks_logo.png"); /* Set the image as background */
-            background-size: cover; /* Cover the entire cell with the image */
         }
 
         .text-cell {
-            /* Adjust the width of the text cell as needed */
+            flex: 1; /* Make the text cell occupy remaining space */
         }
 
-        .logo-img {
-            max-width: 100%; /* Make the image occupy the whole cell width */
-            max-height: 100%; /* Make the image occupy the whole cell height */
-            display: block; /* Remove any potential extra spacing */
-            border: 0; /* Remove any borders */
+        .image-bg {
+            width: 100%; /* Set the image background width to 100% of the cell */
+            height: 100%; /* Set the image background height to 100% of the cell */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-size: cover; /* Cover the entire cell with the image */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -60,7 +58,7 @@ permalink: /projects/
                 <table class="page-list">
                     <tr class="clickable-row" data-href="/projects/GPErks">
                         <td class="row-content">
-                            <div class="square-cell"></div>
+                            <div class="square-cell image-bg" style="background-image: url('/images/GPErks_logo.png');"></div>
                             <div class="text-cell">
                                 <p>GPErks</p>
                                 <p>A Python library to (bene)fit Gaussian Process Emulators</p>
@@ -70,7 +68,7 @@ permalink: /projects/
                     <!-- Add similar rows for other projects, changing the image path -->
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
                         <td class="row-content">
-                            <div class="square-cell" style="background-image: url('/images/TheFlysLoop_logo.png');"></div>
+                            <div class="square-cell image-bg" style="background-image: url('/images/TheFlysLoop_logo.png');"></div>
                             <div class="text-cell">
                                 <p>The Fly's Loop</p>
                                 <p>Unravelling the chaotic behaviour of a nervous fly at lunch time</p>
