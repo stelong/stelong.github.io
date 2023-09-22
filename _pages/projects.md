@@ -12,17 +12,47 @@ permalink: /projects/
             padding: 0;
         }
 
-        table.page-list {
+        <!-- table.page-list {
             width: 100%;
             border-collapse: collapse; /* Make table borders invisible */
+        } -->
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
         }
 
-        tr.clickable-row {
+        .clickable-row {
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
-        td.description {
-            vertical-align: top; /* Align text to the top */
+        .clickable-row:hover {
+            background-color: #f0f0f0;
+        }
+
+        .description {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .description h2 {
+            margin: 0;
+            text-align: left; /* Left-align the heading */
+        }
+
+        .description p {
+            margin: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
         }
 
         td img {
@@ -51,7 +81,7 @@ permalink: /projects/
                         </p>
                     </td>
                     <td>
-                        <img src="/images/GPErks_logo.png" width="30" height="30">
+                        <img class="logo" src="/images/GPErks_logo.png">
                     </td>
                 </tr>
                 <tr class="clickable-row" data-href="/projects/GPErks">
@@ -62,7 +92,7 @@ permalink: /projects/
                         </p>
                     </td>
                     <td>
-                        <img src="/images/TheFlysLoop_logo.png" width="30" height="30">
+                        <img class="logo" src="/images/TheFlysLoop_logo.png">
                     </td>
                 </tr>
             </table>
