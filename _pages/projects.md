@@ -20,25 +20,20 @@ permalink: /projects/
             cursor: pointer;
         }
 
-        .square-cell {
-            width: 25px;
-            vertical-align: top; /* Align image to the top of the cell */
-        }
-
-        .description-cell {
-            /* Adjust the width of the first column cell as needed */
+        .text-cell {
             vertical-align: top; /* Align text to the top */
         }
 
         .logo-cell {
+            width: 30px; /* Set fixed width for the second column (adjust as needed) */
+            height: 30px; /* Set fixed height for the second column (same as width for a square) */
             text-align: center; /* Center the content horizontally */
             padding: 0; /* Remove padding */
-            vertical-align: top; /* Align image to the top */
         }
 
         .logo-img {
-            max-width: 100%; /* Make the image occupy the whole cell width */
-            max-height: 100%; /* Make the image occupy the entire cell height */
+            width: 100%; /* Make the image occupy the whole cell width */
+            height: 100%; /* Make the image occupy the entire cell height */
             display: block; /* Remove any potential extra spacing */
             border: 0; /* Remove any borders */
         }
@@ -58,29 +53,21 @@ permalink: /projects/
             <div class="row">
                 <table class="page-list">
                     <tr class="clickable-row" data-href="/projects/GPErks">
-                        <td class="description-cell">
-                            <div>
-                                <strong>GPErks</strong><br>
-                                A Python library to (bene)fit Gaussian Process Emulators
-                            </div>
+                        <td class="text-cell">
+                            <strong>GPErks</strong><br>
+                            A Python library to (bene)fit Gaussian Process Emulators
                         </td>
                         <td class="logo-cell">
-                            <div class="square-cell">
-                                <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErks_logo">
-                            </div>
+                            <img class="logo-img" src="/images/GPErks_logo.png" alt="GPErks_logo">
                         </td>
                     </tr>
                     <tr class="clickable-row" data-href="/projects/TheFlysLoop">
-                        <td class="description-cell">
-                            <div>
-                                <strong>The Fly's Loop</strong><br>
-                                Unravelling the chaotic behavior of a nervous fly at lunchtime
-                            </div>
+                        <td class="text-cell">
+                            <strong>The Fly's Loop</strong><br>
+                            Unravelling the chaotic behavior of a nervous fly at lunchtime
                         </td>
                         <td class="logo-cell">
-                            <div class="square-cell">
-                                <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoop_logo">
-                            </div>
+                            <img class="logo-img" src="/images/TheFlysLoop_logo.png" alt="TheFlysLoop_logo">
                         </td>
                     </tr>
                 </table>
