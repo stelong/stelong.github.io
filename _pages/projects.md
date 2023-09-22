@@ -21,7 +21,7 @@ permalink: /projects/
         }
 
         .square-cell {
-            width: 50px;
+            width: 25px;
             vertical-align: top; /* Align image to the top of the cell */
         }
 
