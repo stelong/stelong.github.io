@@ -1,9 +1,4 @@
----
-layout: page
-title: Projects
-permalink: /projects/
----
-
+<!DOCTYPE html>
 <html>
 <head>
     <style>
@@ -12,10 +7,10 @@ permalink: /projects/
             padding: 0;
         }
 
-        <!-- table.page-list {
+        table.page-list {
             width: 100%;
             border-collapse: collapse; /* Make table borders invisible */
-        } -->
+        }
 
         .row {
             display: flex;
@@ -39,11 +34,13 @@ permalink: /projects/
         .description {
             flex-grow: 1;
             padding-right: 20px;
+            border: none; /* Remove borders from td.description */
         }
 
         .description h2 {
             margin: 0;
             text-align: left; /* Left-align the heading */
+            cursor: pointer; /* Add cursor pointer to the h2 for hover effect */
         }
 
         .description p {
@@ -53,6 +50,7 @@ permalink: /projects/
         .logo {
             width: 50px;
             height: 50px;
+            border: none; /* Remove borders from td.logo */
         }
 
         td img {
@@ -84,7 +82,7 @@ permalink: /projects/
                         <img class="logo" src="/images/GPErks_logo.png">
                     </td>
                 </tr>
-                <tr class="clickable-row" data-href="/projects/GPErks">
+                <tr class="clickable-row" data-href="/projects/TheFlysLoop">
                     <td class="description">
                         <h2><a href="/projects/TheFlysLoop"> The Fly's Loop </a></h2>
                         <p>
