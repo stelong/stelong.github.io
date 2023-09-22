@@ -1,10 +1,26 @@
-<!DOCTYPE html>
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+
 <html>
 <head>
     <style>
         body, html {
             margin: 0;
             padding: 0;
+        }
+
+        .description a {
+            color: #007bff; /* Set the default link color to blue (or your desired color) */
+            text-decoration: none; /* Remove underlines from links */
+            transition: color 0.2s; /* Add a smooth color transition on hover */
+        }
+
+        .description a:hover {
+            color: #0056b3; /* Change the link color when hovering (you can adjust the color as needed) */
+            text-decoration: underline; /* Add underlines when hovering */
         }
 
         table.page-list {
@@ -20,37 +36,35 @@
 
         .clickable-row {
             cursor: pointer;
-            display: flex;
+            <!-- display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ddd; -->
         }
 
         .clickable-row:hover {
             background-color: #f0f0f0;
         }
 
-        .description {
+        <!-- .description {
             flex-grow: 1;
             padding-right: 20px;
-            border: none; /* Remove borders from td.description */
-        }
+        } -->
 
-        .description h2 {
+        .description strong {
             margin: 0;
             text-align: left; /* Left-align the heading */
-            cursor: pointer; /* Add cursor pointer to the h2 for hover effect */
         }
 
         .description p {
             margin: 0;
+            text-align: left; /* Left-align the heading */
         }
 
         .logo {
             width: 50px;
             height: 50px;
-            border: none; /* Remove borders from td.logo */
         }
 
         td img {
@@ -73,7 +87,7 @@
             <table class="page-list">
                 <tr class="clickable-row" data-href="/projects/GPErks">
                     <td class="description">
-                        <h2><a href="/projects/GPErks"> GPErks </a></h2>
+                        <strong><a href="/projects/GPErks"> GPErks </a></strong>
                         <p>
                         A Python library to (bene)fit Gaussian Process Emulators.
                         </p>
@@ -84,7 +98,7 @@
                 </tr>
                 <tr class="clickable-row" data-href="/projects/TheFlysLoop">
                     <td class="description">
-                        <h2><a href="/projects/TheFlysLoop"> The Fly's Loop </a></h2>
+                        <strong><a href="/projects/TheFlysLoop"> The Fly's Loop </a></strong>
                         <p>
                         Unravelling the chaotic behavior of a nervous fly at lunchtime.
                         </p>
