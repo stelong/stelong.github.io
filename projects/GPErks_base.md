@@ -1,9 +1,9 @@
 ---
 layout: project
-title: The Fly's Loop
-description: Unravelling the chaotic behavior of a nervous fly at lunchtime.
-categories: [OpenCV, sktime, tsai]
-image: /images/TheFlysLoop_logo.png
+title: GPErks
+description: A Python library to (bene)fit Gaussian Process Emulators.
+categories: [GPyTorch, Gaussian process emulators, Global sensitivity analysis, History matching]
+image: /images/GPErks_logo.png
 url: /projects/{{ page.title | slugize }}/
 ---
 

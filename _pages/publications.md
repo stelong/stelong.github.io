@@ -4,7 +4,8 @@ permalink: /publications/
 title: Publications, Talks, and Posters
 ---
 
-<div class="custom-ruler"></div>
+In this section, you can find all my publications, as well as talks I have given and posters I have presented during conferences. If you're curious to know more about a specific research topic, don't hesitate to reach out!
+
 ## Publications
 
 ### First Author

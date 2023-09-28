@@ -1,8 +1,8 @@
 ---
 layout: project
-title: The Fly's Loop
-description: Unravelling the chaotic behavior of a nervous fly at lunchtime.
-categories: [OpenCV, sktime, tsai]
+title: Multi-Channel Images
+description: Tricks for handling multi-channel images (n > 4) in fastai.
+categories: [fastai, scikit-learn]
 image: /images/TheFlysLoop_logo.png
 url: /projects/{{ page.title | slugize }}/
 ---
