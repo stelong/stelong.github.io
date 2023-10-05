@@ -7,42 +7,53 @@ image: /images/GPErks_logo.png
 url: /projects/{{ page.title | slugize }}/
 ---
 
-Gaussian process regression is a technique to represent the relationship between a model input and its corresponding output using multivariate Gaussian distributions. These are commonly inferred by conditioning a Gaussian prior to model evaluations. The obtained posterior distribution can subsequently be used to query the input parameter space at previously unseen points (interpolation). Uncertainty around predictions grows bigger when extrapolating outside the input parameter space boundaries. These derived distributions effectively become a practical tool for replacing the original model with a probabilistic surrogate model as their constituting hyperparameters gets calibrated to the input-to-output map itself through an optimisation routine. A surrogate model based on Gaussian process regression takes the name of *Gaussian Process Emulator* (GPE).
+Gaussian process regression is a technique to represent the relationship between a model input and its corresponding output using multivariate Gaussian distributions. These are commonly inferred by conditioning a Gaussian prior to model evaluations. The obtained posterior distribution can subsequently be used to query the input parameter space at previously unseen points (interpolation). Uncertainty around predictions grows bigger when extrapolating outside the input parameter ranges. These posterior distributions effectively become a practical tool for replacing the original model with a probabilistic surrogate model as their constituting hyperparameters gets calibrated to the input-to-output map itself. A surrogate model based on Gaussian process regression takes the name of *Gaussian Process Emulator* (GPE). In the context of GPEs, the original model takes the name of *simulator*.
 
 **GPErks** is a Python library to (bene)fit Gaussian Process Emulators.
 
-From the Italian word 'bene' (well, properly), the aim of GPErks is twofold: (1) to provide a fitting routine which actually works (i.e., robust and reliable - we will discuss later about fitting GPEs not being a simple task in general), and (2) to create an accessible tool for scientists to learn more about their model by replacing it with a surrogate, in so doing unlocking a whole lot of analyses (e.g., global sensitivity analysis, model calibration etc.) which are untractable for computationally expensive models.
+From the Italian word 'bene' (well, properly), the aim of GPErks is twofold: (1) to provide a fitting routine which actually works (i.e., robust and reliable - we will discuss later about fitting GPEs not being a simple task in general), and (2) to provide an accessible tool for scientists to learn more about their model by replacing it with a surrogate, in so doing unlocking a whole lot of analyses (e.g., global sensitivity analysis, model calibration etc.) which are untractable for computationally expensive models.
 
-\begin{align}
-    f_{simul}\colon\mathbb{R}^{N\times D} &\to\mathbb{R}^{N} \nonumber \\
-    X &\mapsto \mathbf{y} \nonumber
-\end{align}
-
-Let's take a look at the 1D Forrester et al. (2008) function defined as:
+## Example 1D
+Let's build a GPE of the Forrester et al. (2008) function defined as:
 
 \begin{equation}
-    f_{simul}(x) = (6x - 2)^2 \sin(12x - 4)
+    f_{simul}\,\colon\,[0,\,1] \to\mathbb{R}
 \end{equation}
-
+\begin{equation}
+    x \mapsto (6x - 2)^2 \sin(12x - 4)
+\end{equation}
 
 <iframe src="/images/plotly/GPErks_Figure1.html" height="450" width="100%"></iframe>
 
-More commonly, the model for which we would like to build a GPE is multidimensional, nonlinear, lacks an analytical closed form, and is highly computationally intensive for each individual model evaluation.
+We can see that the GPE uncertainty grows bigger in regions where there is less information about the underlying function (e.g., between the 3rd and the 4th red dots, and at the input space boundaries).
 
-
-Let's build a dataset specifying the number of samples we want to have in our training and testing dataset. This will call the function to generate model evaluations at every point in the defined datasets.
-
-
-
-
-MATHS ALERT: we need some formalism before continuing.
-
-Let's consider $N$ realisations $y^{(i)},\,i=1,\,\dots,\,N$ of a computer code $f$ ($=f_{simul}$) for $N$ different input parameter points $\mathbf{x}^{(i)},\,i=1,\,\dots,\,N$ each one with dimension $D$: $\mathbf{x}^{(i)}=(x_{1}^{(i)},\,\dots,\,x_{D}^{(i)})^\mathsf{T}$. More concisely, this can be written as $f(X)$ (or $\mathbf{f}$) where $X=(\mathbf{x}^{(1)},\,\dots,\,\mathbf{x}^{(N)})$ is the input matrix. The pair $(X,\,f(X))$ is called *learning sample*. A Gaussian process emulator (GPE) treats the deterministic response $f(\mathbf{x})$ as a realisation of a random function $f(\mathbf{x},\,\omega)$.
-
-In GPErks, we model this function as the sum of a regression model and a stochastic process:
+## Example 2D
+Let's build a GPE of the Currin et al. (1988) function defined as:
 
 \begin{equation}
-    f(\mathbf{x},\,\omega) = h(\mathbf{x}) + Z(\mathbf{x},\,\omega), \quad (\mathbf{x},\,\omega)\in\mathbb{R}^D\times\Omega \nonumber
+f_{simul}\,\colon\,[0,\,1]^{2} \to\mathbb{R}
+\end{equation}
+\begin{equation}
+(x_1,\,x_2) \mapsto \left[1 - \exp{\left(1 - \dfrac{1}{2 x_2}\right)}\right]\,\left(\dfrac{2300 x_{1}^3 + 1900 x_{1}^2 + 2092 x_{1} + 60}{100 x_{1}^3 + 500 x_{1}^2 + 4 x_{1} + 20}\right)
+\end{equation}
+
+<iframe src="/images/plotly/GPErks_Figure2.html" height="450" width="100%"></iframe>
+
+## General case
+Most often, the simulator for which we want to build an emulator is multi-parametric, non-linear, computationally intensive to run, and lacks an analytical closed form.
+
+\begin{equation}
+    f_{simul}\,\colon\,\mathbb{R}^{d} \to\mathbb{R}
+\end{equation}
+\begin{equation}
+    \mathbf{x} \mapsto y
+\end{equation}
+
+## GPE implementation
+In a GPE setting, we treat the deterministic response of the simulator $f_{simul}(\mathbf{x})$ as a realisation of a random function $f(\mathbf{x},\,\omega)$. In GPErks, we implemented the random function as the sum of a regression model and a stochastic process:
+
+\begin{equation}
+    f(\mathbf{x},\,\omega) = h(\mathbf{x}) + Z(\mathbf{x},\,\omega), \quad (\mathbf{x},\,\omega)\in\mathbb{R}^d\times\Omega \nonumber
 \end{equation}
 
 where $\Omega$ is a probability sample space, commonly the Lebesgue-measurable set of real numbers.
@@ -75,8 +86,12 @@ The covariance function specifies the covariance between pairs of random variabl
     (\mathbf{x},\,\mathbf{x}')&\mapsto k(\mathbf{x},\,\mathbf{x}') = \text{Cov}(Z(\mathbf{x},\,\omega),\, Z(\mathbf{x}',\,\omega)) \nonumber
 \end{align}
 
-Example covariance functions are the RBF kernel (also called *squared exponential*, infinitely differentiable) and the Matern12 / Matern52 kernel (once / twice differentiable).
+Example most commonly used covariance functions are the RBF kernel ($C^{\infty}$) and the Matérn 32 / Matérn 52 kernels ($C^{1}$ / $C^{2}$).
 
 GPErks emulators are univariate. This means that we can only emulate a scalar output, so if you have a multi-dimensional output you need to independently emulate each of its dimensions separately.
 
 Let's setup a GPE in GPErks: we need to define all its components.
+
+
+
+Let's consider $N$ realisations $y^{(i)},\,i=1,\,\dots,\,N$ of a computer code $f$ ($=f_{simul}$) for $N$ different input parameter points $\mathbf{x}^{(i)},\,i=1,\,\dots,\,N$ each one with dimension $D$: $\mathbf{x}^{(i)}=(x_{1}^{(i)},\,\dots,\,x_{D}^{(i)})^\mathsf{T}$. More concisely, this can be written as $f(X)$ (or $\mathbf{f}$) where $X=(\mathbf{x}^{(1)},\,\dots,\,\mathbf{x}^{(N)})$ is the input matrix. The pair $(X,\,f(X))$ is called *learning sample*. A Gaussian process emulator (GPE) 
