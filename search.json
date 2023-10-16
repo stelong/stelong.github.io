@@ -1,13 +1,13 @@
 ---
 layout: null
 ---
-
 [
-{% for post in site.projects %}
-    {
-        "title": "{{ post.title | jsonify }}",
-        "url": "{{ post.url | relative_url | jsonify }}",
-        "desc": "{{ post.description | jsonify }}"
-    }{% unless forloop.last %},{% endunless %}
-{% endfor %}
+  {% for project in site.projects %}
+  {
+    "title": "{{ project.title | escape }}",
+    "url": "{{ site.baseurl }}{{ project.url }}",
+    "category": "{{ project.categories | join: ', ' }}",
+    "content": {{ project.content | strip_html | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
 ]

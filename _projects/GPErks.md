@@ -1,10 +1,7 @@
 ---
 layout: project
 title: GPErks
-description: A Python library to (bene)fit Gaussian Process Emulators.
 categories: [GPyTorch, BoTorch, SALib]
-image: /images/GPErks_logo.png
-url: /projects/{{ page.title | slugize }}/
 ---
 
 Gaussian process regression is a technique to represent the relationship between a model input and its corresponding output using multivariate Gaussian distributions. These are commonly inferred by conditioning a Gaussian prior to model evaluations. The obtained posterior distribution can subsequently be used to query the input parameter space at previously unseen points (interpolation). Uncertainty around predictions grows bigger when extrapolating outside the input parameter ranges. These posterior distributions effectively become a practical tool for replacing the original model with a probabilistic surrogate model as their constituting hyperparameters gets calibrated to the input-to-output map itself. A surrogate model based on Gaussian process regression takes the name of *Gaussian Process Emulator* (GPE). In the context of GPEs, the original model takes the name of *simulator*.
