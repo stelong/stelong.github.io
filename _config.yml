@@ -57,11 +57,26 @@ enforce_ssl: http://stelong.github.io
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: #"/reverie"
 
-
+# Enable searching into _projects files
 collections:
   projects:
     output: true
+  gallery:
+    output: true   
 
+# Create album
+mini_magick:
+    photoFolders:
+        source: images/gallery
+        destination: thumbnails/images/gallery
+        resize: "160x120^"
+        gravity: "center"
+        extent: "160x120"
+
+exiftag:
+  sources:
+    - photos
+    - photos/other_source
 
 #
 # !! You don't need to change any of the configuration flags below !!
