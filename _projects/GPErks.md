@@ -91,4 +91,13 @@ Let's setup a GPE in GPErks: we need to define all its components.
 
 
 
-Let's consider $N$ realisations $y^{(i)},\,i=1,\,\dots,\,N$ of a computer code $f$ ($=f_{simul}$) for $N$ different input parameter points $\mathbf{x}^{(i)},\,i=1,\,\dots,\,N$ each one with dimension $D$: $\mathbf{x}^{(i)}=(x_{1}^{(i)},\,\dots,\,x_{D}^{(i)})^\mathsf{T}$. More concisely, this can be written as $f(X)$ (or $\mathbf{f}$) where $X=(\mathbf{x}^{(1)},\,\dots,\,\mathbf{x}^{(N)})$ is the input matrix. The pair $(X,\,f(X))$ is called *learning sample*. A Gaussian process emulator (GPE) 
+Let's consider $N$ realisations $y^{(i)},\,i=1,\,\dots,\,N$ of a computer code $f$ ($=f_{simul}$) for $N$ different input parameter points $\mathbf{x}^{(i)},\,i=1,\,\dots,\,N$ each one with dimension $D$: $\mathbf{x}^{(i)}=(x_{1}^{(i)},\,\dots,\,x_{D}^{(i)})^\mathsf{T}$. More concisely, this can be written as $f(X)$ (or $\mathbf{f}$) where $X=(\mathbf{x}^{(1)},\,\dots,\,\mathbf{x}^{(N)})$ is the input matrix. The pair $(X,\,f(X))$ is called *learning sample*. A Gaussian process emulator (GPE)
+
+
+<div class="large-12 columns">
+      <p>
+      <a href="https://github.com/stelong/GPErks"> GPErks repository</a></p>
+      <p> Tutorial: </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/e4kYIIrcAHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      <p></p>
+</div>
