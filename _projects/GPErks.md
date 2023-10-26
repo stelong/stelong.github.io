@@ -8,7 +8,7 @@ Gaussian process regression is a technique to represent the relationship between
 
 **GPErks** is a Python library to (bene)fit Gaussian Process Emulators.
 
-From the Italian word 'bene' (well, properly), the aim of GPErks is twofold: (1) to provide a fitting routine which actually works (i.e., robust and reliable - we will discuss later about fitting GPEs not being a simple task in general), and (2) to provide an accessible tool for scientists to learn more about their model by replacing it with a surrogate, in so doing unlocking a whole lot of analyses (e.g., global sensitivity analysis, model calibration etc.) which are untractable for computationally expensive models.
+From the Italian word 'bene' (well, properly), the aim of GPErks is twofold: (1) to provide a fitting routine which is robust and reliable while still being flexible to user customisation, and (2) to provide an accessible tool for scientists to learn more about their model by replacing it with a surrogate, in so doing unlocking a whole lot of analyses (e.g., global sensitivity analysis, model calibration etc.) which are untractable for computationally expensive models.
 
 ## Example 1D
 Let's build a GPE of the Forrester et al. (2008) function defined as:
@@ -35,6 +35,8 @@ f_{simul}\,\colon\,[0,\,1]^{2} \to\mathbb{R}
 \end{equation}
 
 <iframe src="/images/plotly/GPErks_Figure2.html" height="450" width="100%"></iframe>
+
+Similarly to the 1D case, predictions are more accurate (low relative error) in parameter space regions that are better covered by data points.
 
 ## General case
 Most often, the simulator for which we want to build an emulator is multi-parametric, non-linear, computationally intensive to run, and lacks an analytical closed form.
@@ -64,10 +66,10 @@ The regression part $h(\mathbf{x})$ provides a mean approximation to the compute
 where $\boldsymbol{\beta} = (\beta_0,\dots,\beta_d)^\mathsf{T}$ is the regression parameter vector and $\mathbf{h}(\mathbf{x}) = (h_0(\mathbf{x}),\dots,h_d(\mathbf{x}))$ is the basis function vector with
 
 \begin{equation}
-    h_i(\mathbf{x}):=\begin{cases}
-        1 \quad\text{if}\quad i = 0\\
-        x_i \quad\text{if}\quad i=1,\dots,D \nonumber
-    \end{cases}
+    h_i(\mathbf{x}):= 1 \quad\text{if}\quad i = 0
+\end{equation}
+\begin{equation}
+    h_i(\mathbf{x}):= x_i \quad\text{if}\quad i=1,\dots,D \nonumber
 \end{equation}
 
 The stochastic part $Z(\mathbf{x},\,\omega)$ is a centred (zero-mean) Gaussian process ($\mathcal{GP}$), completely and uniquely determined by it covariance function (or *kernel*) $k$:
@@ -78,26 +80,22 @@ The stochastic part $Z(\mathbf{x},\,\omega)$ is a centred (zero-mean) Gaussian p
 
 The covariance function specifies the covariance between pairs of random variables:
 
-\begin{align}
-    k\colon\mathbb{R}^{D}\times\mathbb{R}^{D}&\to\mathbb{R}\,,\quad\text{with}  \nonumber \\
-    (\mathbf{x},\,\mathbf{x}')&\mapsto k(\mathbf{x},\,\mathbf{x}') = \text{Cov}(Z(\mathbf{x},\,\omega),\, Z(\mathbf{x}',\,\omega)) \nonumber
-\end{align}
+\begin{equation}
+    k\colon\mathbb{R}^{D}\times\mathbb{R}^{D}\to\mathbb{R} \nonumber
+\end{equation}
+\begin{equation}
+    (\mathbf{x},\,\mathbf{x}')\mapsto\text{Cov}(Z(\mathbf{x},\,\omega),\, Z(\mathbf{x}',\,\omega)) \nonumber
+\end{equation}
 
-Example most commonly used covariance functions are the RBF kernel ($C^{\infty}$) and the Matérn 32 / Matérn 52 kernels ($C^{1}$ / $C^{2}$).
+Example most commonly used covariance functions are the RBF kernel ($C^{\infty}$) and the Matérn 32 / Matérn 52 kernels ($C^{1}$ / $C^{2}$, respectively).
 
-GPErks emulators are univariate. This means that we can only emulate a scalar output, so if you have a multi-dimensional output you need to independently emulate each of its dimensions separately.
+GPErks emulators are univariate. This means that we can only emulate a scalar output, so if you have a multi-dimensional output you need to independently emulate each of its dimensions separately. In the case of strong correlations between output variables, we recommend training the emulators on uncorrelated variables obtained from the original output via dimensionality reduction techniques.
 
-Let's setup a GPE in GPErks: we need to define all its components.
-
-
-
-Let's consider $N$ realisations $y^{(i)},\,i=1,\,\dots,\,N$ of a computer code $f$ ($=f_{simul}$) for $N$ different input parameter points $\mathbf{x}^{(i)},\,i=1,\,\dots,\,N$ each one with dimension $D$: $\mathbf{x}^{(i)}=(x_{1}^{(i)},\,\dots,\,x_{D}^{(i)})^\mathsf{T}$. More concisely, this can be written as $f(X)$ (or $\mathbf{f}$) where $X=(\mathbf{x}^{(1)},\,\dots,\,\mathbf{x}^{(N)})$ is the input matrix. The pair $(X,\,f(X))$ is called *learning sample*. A Gaussian process emulator (GPE)
 
 
 <div class="large-12 columns">
       <p>
-      <a href="https://github.com/stelong/GPErks"> GPErks repository</a></p>
-      <p> Tutorial: </p>
+      <a href="https://github.com/stelong/GPErks"> GPErks Repository</a></p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/e4kYIIrcAHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
       <p></p>
 </div>
