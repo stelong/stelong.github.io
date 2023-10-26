@@ -61,22 +61,7 @@ baseurl: #"/reverie"
 collections:
   projects:
     output: true
-  gallery:
-    output: true   
 
-# Create album
-mini_magick:
-    photoFolders:
-        source: images/gallery
-        destination: thumbnails/images/gallery
-        resize: "160x120^"
-        gravity: "center"
-        extent: "160x120"
-
-exiftag:
-  sources:
-    - photos
-    - photos/other_source
 
 #
 # !! You don't need to change any of the configuration flags below !!
@@ -107,6 +92,7 @@ plugins:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-email-protect
 
 include: ['_pages']
 

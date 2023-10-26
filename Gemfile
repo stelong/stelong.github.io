@@ -1,5 +1,4 @@
 source "https://rubygems.org"
 gem "github-pages"
 gem "webrick", "~> 1.7"
-gem "mini_magick"
-gem "exifr"
+gem "jekyll-email-protect"
