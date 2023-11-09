@@ -4,7 +4,7 @@ permalink: /search/
 title: Search
 ---
 
-Not a massive list of projects posted on this website to justify a searchbar functionality. Yet, if you are feeling lazy, you can type e.g., 'python' to see If I've used Python in any of the projects.
+Not a massive list of projects posted on this website to justify a search bar functionality. Yet, if you are feeling lazy today, you can type e.g., 'python' to see If I've used Python in any of the projects.
 
 <div id="search-container">
     <input type="text" id="search-input" placeholder="Search through the projects...">
