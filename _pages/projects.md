@@ -114,7 +114,7 @@ In this section, you can find some of the projects I've worked on in my spare ti
                     <td class="column1">
                         <strong><a href="/projects/MultiChannel"> Multi-Channel Images </a></strong>
                         <p>
-                        Tricks for handling multi-channel images (n > 4) in fastai.
+                        Tricks for handling multi-channel (n > 3) images in fastai.
                         </p>
                     </td>
                     <td class="column2">
