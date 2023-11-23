@@ -17,7 +17,7 @@ In this section, you can find all my publications, as well as talks I have given
     <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="Calendar Icon"></span> {{ publication.year }}</li>
     <li><span class="icon-small"><img src="{{ "/images/book.png" | relative_url }}" alt="Book Icon"></span> {{ publication.journal }}</li>
   </ul>
-[Link to Publication]({{ publication.link }})
+[{{ publication.link }}]({{ publication.link }})
 <br>
 {% endfor %}
 
@@ -30,7 +30,7 @@ In this section, you can find all my publications, as well as talks I have given
     <li><span class="icon-small"><img src="{{ "/images/calendar.png" | relative_url }}" alt="Calendar Icon"></span> {{ publication.year }}</li>
     <li><span class="icon-small"><img src="{{ "/images/book.png" | relative_url }}" alt="Book Icon"></span> {{ publication.journal }}</li>
   </ul>
-[Link to Publication]({{ publication.link }})
+[{{ publication.link }}]({{ publication.link }})
 <br>
 {% endfor %}
 
