@@ -12,9 +12,8 @@ One approach to transfer learning consists in duplicating RGB weights of the fir
 
 Let's start from scratch by first implementing a custom dataloader that can handle multi-channel images, then normalise the whole dataset and finally perform transfer learning.
 
+
 ## 1. Data preparation
-
-
 ```python
 import os
 from pathlib import Path
@@ -47,7 +46,7 @@ props
 ```
     'shape: torch.Size([3, 816, 614])'
 
-The dataset we are using for this tutorial is composed of 12 RGB images. Let's augment the number of channels for each of them by repeating the 3 channels n times (e.g., n=3) so to generate multi-channel images 
+The dataset we are using for this tutorial is composed of 12 RGB images. Let's augment the number of channels for each of them by repeating the 3 channels n times (e.g., n=3) so to generate multi-channel images
 
 ```python
 import numpy as np
@@ -66,7 +65,7 @@ props
 ```
     'shape: torch.Size([9, 816, 614])'
 
-Let's save these augmented images as multi-channel .tif images. Also, we construct a pandas dataframe describing a (mock) traning dataset based on the multi-channel images and we save it as a .csv file
+Let's save these augmented images as multi-channel *.tif* images. Also, we construct a pandas dataframe describing a (mock) traning dataset based on the multi-channel images and we save it as a *.csv* file
 
 ```python
 import random
@@ -94,6 +93,7 @@ for i, x in enumerate(x_aug_list):  # loop over all multi-channel images
 
 df.to_csv(path_to_multi / "train.csv", index=False)
 ```
+
 
 ## 2. Data loaders
 Now we need to define some tools to be able to deal with multi-channel images in the context of fastai
@@ -142,7 +142,6 @@ db = DataBlock(
 
 db.summary(df)
 ```
-
     Setting-up type transforms pipelines
     Collecting items from       fname label is_valid is_test
     0   1_multi     0    False   False
@@ -226,7 +225,6 @@ db.summary(df)
     
     No batch_tfms to apply
 
-
 Let's create an image dataloader to iterate over the full dataset described by the dataframe *df*. Since we only have 12 images in the dataset, we will use a batch size of 4
 
 ```python
@@ -257,12 +255,10 @@ def get_data_stats(dls):
     total_std = torch.sqrt(total_var)
     return total_mean, total_std
 
-
 mean, std = get_data_stats(dls)
 ```
 
-Now we can normalise the dataset using an ad hoc item transformation function we define:
-
+Now we can normalise the dataset using an *ad hoc* item transformation based on the computed statistics
 
 ```python
 from fastcore.transform import Transform
@@ -295,15 +291,17 @@ dls = ImageDataLoaders.from_dblock(
 )
 
 mean_check, std_check = get_data_stats(dls)
-mean_check  # close to a tensor of all 0s
-std_check  # close to a tensor of all 1s
+print(mean_check)  # close to a tensor of all 0s
+print(std_check)  # close to a tensor of all 1s
 ```
     tensor([-1.0915e-07,  2.5988e-08, -2.0791e-08, -1.0915e-07,  2.5988e-08,
             -2.0791e-08, -1.0915e-07,  2.5988e-08, -2.0791e-08])
     tensor([1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000])
 
+
 ## 3. Vision learner
-We are ready to define a fastai vision learner based on an example architecture which we know has pretrained weights available (e.g., resnet18). Make sure to switch 'normalize=False'
+We are ready to define a fastai *vision learner* based on an example architecture which we know has pretrained weights available (e.g., resnet18). Make sure to switch 'normalize=False'
+
 
 ```python
 from fastai.metrics import error_rate
@@ -315,13 +313,14 @@ learn = vision_learner(
     dls,
     resnet18,
     metrics=error_rate,
-    pretrained=True,
+    pretrained=True,  # freeze the body (non-trainable)
     normalize=False,
     opt_func=ranger
 )
 ```
 
-We were able to initialise our learner using a multi-channel image dataset, yay! Also, we have manually normalised the dataset so that we can do transfer learing!!! We are still missing something though: we need to adapt the first layer of the network to accommodate all the additional channels after the first 3. We will cycle the weights of the first 3 channels as described in the introduction
+We were able to initialise our learner using a multi-channel image dataset, yay! Also, we manually normalised the dataset so that we can do transfer learing!!! We are still missing something though: we need to adapt the first layer of the network to accommodate all the additional channels after the first 3. We will cycle the weights of the first 3 channels as described in the introduction
+
 
 ```python
 def make_batches(x, bs):
@@ -331,7 +330,7 @@ def make_batches(x, bs):
         return [bs] + make_batches(x - bs, bs)
 
 def create_new_weights(original_weights, n_channels):
-    dst = torch.zeros (64, n_channels, 7, 7)
+    dst = torch.zeros(64, n_channels, 7, 7)  # resnet18 specific, hardcoded
     start = 0
     for i in make_batches(n_channels, 3):
         dst[:, start:start+i, :, :] = original_weights[:, :i, :, :]
@@ -343,10 +342,10 @@ def adapt_first_layer(src_model, n_channels, device):
     new_weights = create_new_weights(original_weights, n_channels)
     new_layer = torch.nn.Conv2d(
         n_channels,
-        64,
-        kernel_size=(7, 7),
-        stride=(2, 2),
-        padding=(3, 3),
+        64,  # resnet18 specific, hardcoded
+        kernel_size=(7, 7),  # same
+        stride=(2, 2),  # same
+        padding=(3, 3),  # same
         bias=False,
     )
     new_layer.weight = torch.nn.Parameter(new_weights)
@@ -354,6 +353,7 @@ def adapt_first_layer(src_model, n_channels, device):
     src_model.to(device)
 ```
 
+Ok, we are ready to adapt the first layer to accommodate more than 3 channels! Notice that there are some hardcoded values you need to change in case you would want to use a different architecture
 
 ```python
 n_channels = 9
@@ -448,7 +448,7 @@ learn.summary()
     Total trainable params: 566,208
     Total non-trainable params: 11,157,504
     
-    Optimizer used: <function ranger at 0x29437e560>
+    Optimizer used: <function ranger at 0x2db4a3e20>
     Loss function: FlattenedLoss of CrossEntropyLoss()
     
     Model frozen up to parameter group #2
@@ -459,23 +459,11 @@ learn.summary()
       - Recorder
       - ProgressCallback
 
+Notice that most of the parameters (body) are not targeted for training (Trainable: False) since we are doing transfer learning ('pretrained=True').
 
-Also, we might want to change the activation function for better performance. We will use Mish by replacing ReLU instances throughout the whole network
-
-```python
-def replace_relu_to_mish(model):
-    for child_name, child in model.named_children():
-        if isinstance(child, torch.nn.ReLU):
-            setattr(model, child_name, torch.nn.Mish(inplace=True))
-        else:
-            replace_relu_to_mish(child)
-
-replace_relu_to_mish(learn.model)
-# learn.summary()  # you can check that ReLU was correctly replaced by Mish here
-```
 
 ## 4. Transfer learning
-We are ready to train our model! Of course 'train' is a big word, we are solving a mock / fake classification problem here just to showcase we can run a training and transfer learning on multi-channel images. First we find a suitable learning rate using fastai *lr_find* utility. Then, we can fine-tune trainable parameters.
+We are ready to train our model! Of course 'train' is a big word, we are solving a mock / fake classification problem here just to showcase we can run a training and transfer learning on multi-channel images. First, we find a suitable learning rate using fastai's *lr_find* utility. Then, we fine-tune trainable parameters
 
 ```python
 from fastai.torch_core import set_seed
@@ -483,13 +471,16 @@ set_seed(8, reproducible=True)  # enforcing reproducibility
 
 learn.lr_find()
 ```
-    SuggestedLRs(valley=0.013182567432522774)
+    SuggestedLRs(valley=0.0020892962347716093)
+
+<div style="text-align: center;">
+        <img src="/images/multichannel/MultiChannel_Figure2.png" width="auto" height="auto" alt="Lr">        
+</div>
 
 ```python
-n_epochs = 10
-lr = 0.013
-
-learn.fit_one_cycle(n_epochs, lr)
+n_epochs = 5
+lr = 2e-3
+learn.fine_tune(n_epochs, lr)
 ```
 <b>
 <table border="1" class="dataframe">
@@ -505,75 +496,43 @@ learn.fit_one_cycle(n_epochs, lr)
   <tbody>
     <tr>
       <td>0</td>
-      <td>1.032188</td>
+      <td>0.733440</td>
       <td>None</td>
       <td>None</td>
-      <td>00:07</td>
+      <td>00:06</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>1.080188</td>
+      <td>0.578637</td>
       <td>None</td>
       <td>None</td>
-      <td>00:07</td>
+      <td>00:06</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>1.186338</td>
+      <td>0.498724</td>
       <td>None</td>
       <td>None</td>
-      <td>00:07</td>
+      <td>00:06</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>1.073428</td>
+      <td>0.576430</td>
       <td>None</td>
       <td>None</td>
-      <td>00:07</td>
+      <td>00:06</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>1.064210</td>
+      <td>0.672077</td>
       <td>None</td>
       <td>None</td>
-      <td>00:07</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>1.070826</td>
-      <td>None</td>
-      <td>None</td>
-      <td>00:07</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.958571</td>
-      <td>None</td>
-      <td>None</td>
-      <td>00:07</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>0.838434</td>
-      <td>None</td>
-      <td>None</td>
-      <td>00:07</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>0.782456</td>
-      <td>None</td>
-      <td>None</td>
-      <td>00:07</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>0.703360</td>
-      <td>None</td>
-      <td>None</td>
-      <td>00:07</td>
+      <td>00:06</td>
     </tr>
   </tbody>
 </table>
 
-*TODO*: insert download button to download the full dataset of 12 RGB images and to download the full jupyter notebook.
+<div class="custom-ruler"></div>
+
+ - {% include download-button.html url="/documents/MultiChannel_data.tar.gz" text="Download Dataset" %}
+ - {% include download-button.html url="/documents/MultiChannel_notebook.ipynb" text="Download Notebook" %}
