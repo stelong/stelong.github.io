@@ -1,3 +1,9 @@
+- title: Global Sensitivity Analysis of Thrombus Formation in the Left Atrial Appendage of Atrial Fibrillation Patients
+  authors: Smine, Z.; Melidoro, P.; Qureshi, A.; Longobardi, S.; Williams, S. E.; Aslanidi, O.; De Vecchi, A.
+  year: 2024
+  journal: Statistical Atlases and Computational Models of the Heart (STACOM 2023)
+  link: https://doi.org/10.1007/978-3-031-52448-6_6
+
 - title: Cell to whole organ global sensitivity analysis on a four-chamber heart electromechanics model using Gaussian processes emulators
   authors: Strocchi, M.; Longobardi, S.; Augustin, C. M.; Gsell, M. A. F.; Petras, A.; Rinaldi, C. A.; Vigmond, E. J.; Plank, G.; Oates, C. J.; Wilkinson, R. D.; Niederer, S. A.
   year: 2023
