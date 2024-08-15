@@ -22,6 +22,12 @@
   journal: IEEE Transactions on Biomedical Engineering
   link: https://doi.org/10.1109/TBME.2022.3163428
 
+- title: Parameter Space Reduction for Four-chamber Electromechanics Simulations Using Gaussian Processes Emulators
+  authors: Strocchi, M.; Longobardi, S.; Augustin, C. M.; Gsell, M. A. F.; Vigmond, E. J.; Plank, G.; Oates, C. J.; Wilkinson, R. D.; Niederer, S. A.
+  year: 2022
+  journal: ARGESIM Report 17 (MATHMOD 2022)
+  link: https://doi.org/10.11128/arep.17.a17078
+
 - title: Modelling the interaction between stem cells derived cardiomyocytes patches and host myocardium to aid non-arrhythmic engineered heart tissue design
   authors: Fassina, D.; Costa, C. M.; Longobardi, S.; Karabelas, E.; Plank, G.; Harding, S. E.; Niederer, S. A.
   year: 2022
@@ -33,6 +39,12 @@
   year: 2021
   journal: PLOS Computational Biology
   link: https://doi.org/10.1371/journal.pcbi.1008851
+
+- title: Modelling the Effects of Conductive Polymers and Stem Cells Derived Myocytes on Scarred Heart Tissue
+  authors: Fassina, D.; Costa, C. M.; Longobardi, S.; Harding, S. E.; Niederer, S. A.
+  year: 2020
+  journal: 2020 Computing in Cardiology (CinC 2020)
+  link: https://doi.org/10.22489/CinC.2020.223
 
 - title: Tracking the motion of intracardiac structures aids the development of future leadless pacing systems
   authors: Razeghi, O.; Strocchi, M.; Lee, A.; Longobardi, S.; Sidhu, B. S.; Gould, J.; Behar, J. M.; Rajani, R.; Rinaldi, C. A.; Niederer, S. A.
