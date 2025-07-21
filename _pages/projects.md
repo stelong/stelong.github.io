@@ -1,7 +1,6 @@
 ---
 layout: page
 permalink: /projects/
-title: Projects
 ---
 
 A (non-exhaustive) list of projects I’ve worked on in my spare time. Some of these started off by addressing a real research need and ended up becoming useful tools, while others were just for fun.
