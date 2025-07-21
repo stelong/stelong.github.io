@@ -4,7 +4,7 @@ permalink: /projects/
 title: Projects
 ---
 
-In this section, you can find some of the projects I've worked on in my spare time. Some of these started off as addressing a real research need and ended up becoming useful tools, while others were just for fun.
+A (non-exhaustive) list of projects I’ve worked on in my spare time. Some of these started off by addressing a real research need and ended up becoming useful tools, while others were just for fun.
 
 <html>
 <head>

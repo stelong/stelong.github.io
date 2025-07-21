@@ -1,10 +1,9 @@
 ---
 layout: page
 permalink: /publications/
-title: Publications, Talks, and Posters
 ---
 
-In this section, you can find all my publications, as well as talks I have given and posters I have presented during conferences. If you're curious to know more about a specific research topic, don't hesitate to reach out!
+Here you can find all my publications, as well as talks and posters I have presented at conferences. If you're curious to know more about a specific research topic, don't hesitate to reach out!
 
 ## Publications
 

@@ -58,9 +58,9 @@ enforce_ssl: http://stelong.github.io
 baseurl: #"/reverie"
 
 # Enable searching into _projects files
-collections:
-  projects:
-    output: true
+# collections:
+#   projects:
+#     output: true
 
 thumbsurl: "/images/gallery/thumbs/"
 
