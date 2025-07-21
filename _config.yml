@@ -58,9 +58,10 @@ enforce_ssl: http://stelong.github.io
 baseurl: #"/reverie"
 
 # Enable searching into _projects files
-# collections:
-#   projects:
-#     output: true
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 thumbsurl: "/images/gallery/thumbs/"
 
@@ -99,7 +100,7 @@ plugins:
   - jekyll-paginate
   - jekyll-email-protect
 
-include: ['_pages']
+include: ['_pages', '_projects']
 
 paginate: 6
 paginate_path: /page:num/
