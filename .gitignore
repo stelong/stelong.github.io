@@ -1,13 +1,25 @@
-_site
+_site/
 .DS_Store
-.jekyll
+.jekyll/
 .jekyll-metadata
-.bundle
-.sass-cache
-Gemfile.lock
-node_modules
-package.json
+.jekyll-cache/
+.bundle/
+.sass-cache/
+vendor/
+
 *.gem
 *.gemspec
-.jekyll-cache
-vendor
+*.log
+*.bak
+*~
+*.swp
+
+node_modules/
+package.json
+
+# Optional: comment this out if not using GitHub Pages build
+# Gemfile.lock
+
+# Editor configs
+.vscode/
+tmp/
