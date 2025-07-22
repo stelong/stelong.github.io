@@ -17,8 +17,8 @@ vendor/
 node_modules/
 package.json
 
-# Optional: comment this out if not using GitHub Pages build
-# Gemfile.lock
+# Comment this out if not using GitHub Pages build
+Gemfile.lock
 
 # Editor configs
 .vscode/
