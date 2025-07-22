@@ -87,9 +87,9 @@ A (non-exhaustive) list of projects I’ve worked on in my spare time. Some of t
     <div class="full">
         <div class="row">
             <table class="page-list">
-                <tr class="clickable-row" data-href="/projects/GPErks">
+                <tr class="clickable-row" data-href="/projects/gperks">
                     <td class="column1">
-                        <strong><a href="/projects/GPErks"> GPErks </a></strong>
+                        <strong><a href="/projects/gperks"> GPErks </a></strong>
                         <p>
                         A Python library to (bene)fit Gaussian Process Emulators.
                         </p>
@@ -98,9 +98,9 @@ A (non-exhaustive) list of projects I’ve worked on in my spare time. Some of t
                         <img class="logo" src="/images/GPErks_logo.png">
                     </td>
                 </tr>
-                <tr class="clickable-row" data-href="/projects/TheFlysLoop">
+                <tr class="clickable-row" data-href="/projects/theflysloop">
                     <td class="column1">
-                        <strong><a href="/projects/TheFlysLoop"> The Fly's Loop </a></strong>
+                        <strong><a href="/projects/theflysloop"> The Fly's Loop </a></strong>
                         <p>
                         Unravelling the chaotic behavior of a nervous fly at lunchtime.
                         </p>
@@ -109,9 +109,9 @@ A (non-exhaustive) list of projects I’ve worked on in my spare time. Some of t
                         <img class="logo" src="/images/TheFlysLoop_logo.png">
                     </td>
                 </tr>
-                <tr class="clickable-row" data-href="/projects/MultiChannel">
+                <tr class="clickable-row" data-href="/projects/multichannelimages">
                     <td class="column1">
-                        <strong><a href="/projects/MultiChannel"> Multi-Channel Images </a></strong>
+                        <strong><a href="/projects/multichannelimages"> Multi-Channel Images </a></strong>
                         <p>
                         Tricks for handling multi-channel (n > 3) images in fastai.
                         </p>
