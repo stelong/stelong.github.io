@@ -42,5 +42,8 @@ paginate: 6
 paginate_path: /page:num/
 
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - .github
